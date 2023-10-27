@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">IntermediateStatus</string>
+    <string name="btnCamera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="btnCameraX">CameraX</string>
+    <string name="upload">Upload</string>
+    <string name="description">Type Description</string>
+</resources>
