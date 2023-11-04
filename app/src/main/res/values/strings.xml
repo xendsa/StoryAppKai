@@ -1,8 +1,22 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IntermediateStatus</string>
     <string name="btnCamera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="btnCameraX">CameraX</string>
-    <string name="upload">Upload</string>
     <string name="description">Type Description</string>
+    <string name="title_login">Ready To Upload Your Story?</string>
+    <string name="message_login">Let\'s go !!!!!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="title_register">Complete Your Account Registration Here</string>
+    <string name="name">Name</string>
+    <string name="register">Register</string>
+    <string name="start_description">Welcome to Storyys, share your stories with others</string>
+    <string name="title">Storyys App</string>
+    <string name="logout">Logout</string>
+    <string name="message">Your Story has been uploaded</string>
+    <string name="next">Next</string>
+    <string name="warning_no_image_selected">Upload Failed\nNo image selected</string>
+    <string name="password_alert">"Password can't less than 8 character "</string>
 </resources>

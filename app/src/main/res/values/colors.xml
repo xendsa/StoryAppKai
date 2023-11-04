@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#CCC6C6</color>
     <color name="gray_light">#CCCACA</color>
+    <color name="blue">#0034D1</color>
+    <color name="btnColor">#499BB4</color>
+    <color name="btnUpload">#5FB161</color>
 </resources>

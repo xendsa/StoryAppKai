@@ -18,10 +18,12 @@
 
     <ImageView
         android:id="@+id/iv_previewImage"
-        android:layout_width="391dp"
+        android:layout_width="336dp"
         android:layout_height="336dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/ic_baseline_insert_photo_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,57 +31,71 @@
         android:id="@+id/btn_gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/btnColor"
         android:elevation="2dp"
         android:text="@string/gallery"
         app:layout_constraintBottom_toTopOf="@+id/btn_upload"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.601"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/btnColor"
         android:text="@string/btnCamera"
         app:layout_constraintBottom_toTopOf="@+id/btn_upload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.6" />
 
-    <Button
+    <com.kai.intermediatestatus.ui.customview.ButtonCustomView
         android:id="@+id/btn_upload"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/upload"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionLayout"
         app:layout_constraintVertical_bias="0.809" />
 
-    <EditText
-        android:id="@+id/textView"
-        style="@style/Widget.AppCompat.EditText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descriptionLayout"
         android:layout_width="314dp"
         android:layout_height="194dp"
-        android:layout_marginTop="436dp"
         android:background="@drawable/descborder"
         android:backgroundTint="@color/gray"
         android:gravity="center"
         android:hint="@string/description"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.802"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="447dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/description"
+            android:layout_width="310dp"
+            android:layout_height="190dp"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:layout_margin="10dp"
+            android:lines="10"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
