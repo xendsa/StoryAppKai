@@ -3,9 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/btn_maps"
+        android:icon="@drawable/ic_baseline_add_location_alt_24"
+        android:title="@string/location"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/btn_Logout"
         android:icon="@drawable/ic_baseline_logout_24"
         android:title="@string/logout"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
 </menu>

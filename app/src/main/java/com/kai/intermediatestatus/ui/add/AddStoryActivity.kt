@@ -3,6 +3,7 @@ package com.kai.intermediatestatus.ui.add
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -36,6 +37,7 @@ class AddStoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddstoryBinding
     private lateinit var myButton: Button
     private lateinit var myEditText: EditText
+    private var myLocation: Location? = null
     private val viewModel by viewModels<AddStoryViewModel> {
         ViewModelFactory.getInstance(this)
     }
@@ -76,19 +78,19 @@ class AddStoryActivity : AppCompatActivity() {
     }
 
     @Suppress("DEPRECATION")
-    private fun setupView(){
+    private fun setupView() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
-        }else{
+        } else {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
-        supportActionBar?.show()
+        supportActionBar?.hide()
     }
 
-    private fun setCustomButton(){
+    private fun setCustomButton() {
         val result = myEditText.text
         myButton.isEnabled = result != null && result.toString().isNotEmpty()
 
@@ -190,7 +192,7 @@ class AddStoryActivity : AppCompatActivity() {
 
             viewModel.getSession().observe(this) { user ->
                 token = user.token
-                viewModel.addStory(token, multipartBody, requestBody)
+                viewModel.addStory(token, multipartBody, requestBody, myLocation)
             }
 
         } ?: showToast(getString(R.string.warning_no_image_selected))

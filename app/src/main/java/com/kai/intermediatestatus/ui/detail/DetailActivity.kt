@@ -20,20 +20,21 @@ class DetailActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        storyItem = if (Build.VERSION.SDK_INT >= 33){
+        storyItem = if (Build.VERSION.SDK_INT >= 33) {
             intent.getParcelableExtra("storyItem", ListStoryItem::class.java)!!
-        }else {
+        } else {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra("storyItem")!!
         }
         setData()
         setupView()
     }
+
     @Suppress("DEPRECATION")
-    private fun setupView(){
+    private fun setupView() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
-        }else{
+        } else {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -48,7 +49,7 @@ class DetailActivity : AppCompatActivity() {
         return true
     }
 
-    private fun setData(){
+    private fun setData() {
         Glide
             .with(this)
             .load(storyItem.photoUrl)

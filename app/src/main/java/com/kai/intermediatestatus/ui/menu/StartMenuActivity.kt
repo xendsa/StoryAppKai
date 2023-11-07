@@ -25,7 +25,7 @@ class StartMenuActivity : AppCompatActivity() {
         playAnimation()
     }
 
-    private fun setupView(){
+    private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
@@ -38,26 +38,27 @@ class StartMenuActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun setupAction(){
-        binding.btnLogin.setOnClickListener{
+    private fun setupAction() {
+        binding.btnLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-        binding.btnRegister.setOnClickListener{
+        binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 
-    private fun playAnimation(){
+    private fun playAnimation() {
         ObjectAnimator.ofFloat(binding.ivLogo, View.TRANSLATION_X, -30f, 30f).apply {
             duration = 6000
             repeatCount = ObjectAnimator.INFINITE
-            repeatMode =ObjectAnimator.REVERSE
+            repeatMode = ObjectAnimator.REVERSE
         }.start()
 
         val login = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(100)
         val register = ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(100)
         val title = ObjectAnimator.ofFloat(binding.tvTitle, View.ALPHA, 1f).setDuration(100)
-        val description = ObjectAnimator.ofFloat(binding.tvDescription, View.ALPHA, 1f).setDuration(100)
+        val description =
+            ObjectAnimator.ofFloat(binding.tvDescription, View.ALPHA, 1f).setDuration(100)
 
         val buttonLogReg = AnimatorSet().apply {
             playTogether(login, register)

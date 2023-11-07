@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">IntermediateStatus</string>
+    <string name="app_name">Storyys</string>
     <string name="btnCamera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="btnCameraX">CameraX</string>
@@ -19,4 +19,12 @@
     <string name="next">Next</string>
     <string name="warning_no_image_selected">Upload Failed\nNo image selected</string>
     <string name="password_alert">"Password can't less than 8 character "</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="location">Location</string>
+    <string name="normal_type">Normal Map</string>
+    <string name="satellite_type">Satellite Map</string>
+    <string name="terrain_type">Terrain Map</string>
+    <string name="hybrid_type">Hybrid Map</string>
+    <string name="retry">Retry</string>
+    <string name="maps_enable">Post With Location</string>
 </resources>

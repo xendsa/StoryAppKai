@@ -7,14 +7,14 @@ import com.kai.intermediatestatus.data.Repository
 import com.kai.intermediatestatus.data.api.Result
 import com.kai.intermediatestatus.data.response.RegisterResponse
 
-class RegisterViewModel(private val repository: Repository): ViewModel() {
+class RegisterViewModel(private val repository: Repository) : ViewModel() {
 
     private val _registerResponse = MediatorLiveData<Result<RegisterResponse>>()
     val registerResponse: LiveData<Result<RegisterResponse>> = _registerResponse
 
-    fun register(name: String, email: String, password: String){
+    fun register(name: String, email: String, password: String) {
         val liveData = repository.register(name, email, password)
-        _registerResponse.addSource(liveData){result ->
+        _registerResponse.addSource(liveData) { result ->
             _registerResponse.value = result
         }
     }

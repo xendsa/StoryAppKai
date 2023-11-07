@@ -2,7 +2,7 @@ package com.kai.intermediatestatus.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse (
+data class LoginResponse(
 
     @field:SerializedName("loginResult")
     val loginResult: LoginResult,

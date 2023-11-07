@@ -14,7 +14,7 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.kai.intermediatestatus.R
 
-class PasswordCustomView: AppCompatEditText {
+class PasswordCustomView : AppCompatEditText {
 
     private lateinit var alertIcon: Drawable
     private var passwordVisibility = false
@@ -42,9 +42,9 @@ class PasswordCustomView: AppCompatEditText {
 
     private fun showAlert() {
         passwordVisibility = !passwordVisibility
-        inputType = if (passwordVisibility){
+        inputType = if (passwordVisibility) {
             InputType.TYPE_CLASS_TEXT
-        }else {
+        } else {
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_NUMBER_VARIATION_PASSWORD
         }
         setSelection(text!!.length)
@@ -70,10 +70,10 @@ class PasswordCustomView: AppCompatEditText {
         compoundDrawablePadding = 12
         setIconDrawable(alertIcon)
 
-        setOnTouchListener{_, event ->
+        setOnTouchListener { _, event ->
             val drawableInRights = 2
-            if (event.action == MotionEvent.ACTION_UP){
-                if (event.rawX >= (right - compoundDrawables[drawableInRights].bounds.width())){
+            if (event.action == MotionEvent.ACTION_UP) {
+                if (event.rawX >= (right - compoundDrawables[drawableInRights].bounds.width())) {
                     showAlert()
                     return@setOnTouchListener true
                 }
@@ -81,14 +81,14 @@ class PasswordCustomView: AppCompatEditText {
             false
         }
 
-        addTextChangedListener(object : TextWatcher{
+        addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s.toString().length < 8){
-                    setError(context.getString(R.string.password_alert),null)
-                }else {
+                if (s.toString().length < 8) {
+                    setError(context.getString(R.string.password_alert), null)
+                } else {
                     error = null
                 }
             }

@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 import com.kai.intermediatestatus.R
 
-class ButtonCustomView: AppCompatButton {
+class ButtonCustomView : AppCompatButton {
 
     private lateinit var enableBackground: Drawable
     private lateinit var disableBackground: Drawable

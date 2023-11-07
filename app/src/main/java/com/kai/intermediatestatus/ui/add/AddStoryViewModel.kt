@@ -1,5 +1,6 @@
 package com.kai.intermediatestatus.ui.add
 
+import android.location.Location
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
@@ -23,9 +24,10 @@ class AddStoryViewModel(private val repository: Repository) : ViewModel() {
     fun addStory(
         token: String,
         file: MultipartBody.Part,
-        description: RequestBody
+        description: RequestBody,
+        myLocation: Location?
     ) {
-        val liveData = repository.addStory(token, file, description)
+        val liveData = repository.addStory(token, file, description, myLocation)
         _addStory.addSource(liveData) { result ->
             _addStory.value = result
         }

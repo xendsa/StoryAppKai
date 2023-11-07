@@ -8,7 +8,7 @@ import com.kai.intermediatestatus.data.local.dataStore
 
 object Injection {
 
-    fun provideRepository(context: Context): Repository{
+    fun provideRepository(context: Context): Repository {
         val preference = UserPreference.getInstance(context.dataStore)
         val service = ApiConfig.getApiService()
         return Repository.getInstance(preference, service)

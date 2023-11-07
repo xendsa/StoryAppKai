@@ -40,7 +40,7 @@ fun getImageUri(context: Context): Uri {
     return uri ?: getImageUriForPreQ(context)
 }
 
-private fun getImageUriForPreQ(context: Context): Uri{
+private fun getImageUriForPreQ(context: Context): Uri {
     val fileDirectory = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
     val imageFile = File(fileDirectory, "/MyCamera/$timestamp.jpg")
     if (imageFile.parentFile?.exists() == false) imageFile.parentFile?.mkdir()
@@ -54,7 +54,7 @@ fun createCustomTempFile(context: Context): File {
     return File.createTempFile(timestamp, ".jpg", fileDirectory)
 }
 
-fun uriToFile(imageUri: Uri, context: Context): File{
+fun uriToFile(imageUri: Uri, context: Context): File {
     val myFile = createCustomTempFile(context)
     val inputStream = context.contentResolver.openInputStream(imageUri) as InputStream
     val outputStream = FileOutputStream(myFile)
@@ -77,7 +77,7 @@ fun File.reduceSize(): File {
         val bmpPicByteArray = bmpStream.toByteArray()
         streamLength = bmpPicByteArray.size
         compressQuality -= 5
-    }while (streamLength > MAXIMAL_SIZE)
+    } while (streamLength > MAXIMAL_SIZE)
     bitmap?.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
     return file
 }
