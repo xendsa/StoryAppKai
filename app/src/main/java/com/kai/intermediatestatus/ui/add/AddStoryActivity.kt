@@ -55,7 +55,7 @@ class AddStoryActivity : AppCompatActivity() {
     private fun permissionGranted() = ContextCompat.checkSelfPermission(
         this, REQUIRED_PERMISSION
     ) == PackageManager.PERMISSION_GRANTED
-
+//test add comment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddstoryBinding.inflate(layoutInflater)
